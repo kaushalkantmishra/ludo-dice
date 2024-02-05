@@ -10,40 +10,35 @@ export default function LudoBoard() {
   };
 
   let updateBlue = () => {
-    const randomValue = generateRandomValue();
-
-    setMoves((preMoves) => {
-      return { ...preMoves, blue: preMoves.blue = randomValue };
+    setMoves((prevMoves) => {
+      const randomValue = generateRandomValue();
+      return { ...prevMoves, blue: randomValue, red: 0, yellow: 0, green: 0 };
     });
   };
-
   let updateRed = () => {
-    const randomValue = generateRandomValue();
-
-    setMoves((preMoves) => {
-      return { ...preMoves, red: preMoves.red = randomValue };
+    setMoves((prevMoves) => {
+      const randomValue = generateRandomValue();
+      return { ...prevMoves, red: randomValue,blue:0, yellow: 0, green: 0 };
     });
   };
 
   let updateYellow = () => {
-    const randomValue = generateRandomValue();
-
-    setMoves((preMoves) => {
-      return { ...preMoves, yellow: preMoves.yellow = randomValue };
+    setMoves((prevMoves) => {
+      const randomValue = generateRandomValue();
+      return { ...prevMoves, yellow: randomValue, red: 0, blue: 0, green: 0 };
     });
   };
 
   let updateGreen = () => {
-    const randomValue = generateRandomValue();
-
-    setMoves((preMoves) => {
-      return { ...preMoves, green: preMoves.green = randomValue };
+    setMoves((prevMoves) => {
+      const randomValue = generateRandomValue();
+      return { ...prevMoves, green: randomValue, red: 0, yellow: 0, blue: 0 };
     });
   };
 
   return (
    <div>
-      <p>Game Begins!</p>
+      <h1>Game Begins!</h1>
       <div className="board">
         <div className="corner">
           <p>Blue Moves ={moves.blue} </p>
